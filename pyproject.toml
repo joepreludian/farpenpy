@@ -9,7 +9,7 @@ dependencies = [
     "pypdf>=4.2.0",
     "pydantic>=2.7.4",
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "GNU Lesser General Public License v2.1"}
 
