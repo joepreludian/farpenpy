@@ -1,14 +1,15 @@
 import abc
-from pydantic import BaseModel
-from farpenpy.logger import log
 from typing import List
+
+from pydantic import BaseModel
+
+from farpenpy.logger import log
 
 
 class SubReport(abc.ABC):
-
     def __init__(self) -> None:
         log.info(f"Init ImportParser {self.__class__.__name__}")
-        
+
     def process(self, page_data: list[str]) -> List[BaseModel]:
         found_data = []
 
@@ -19,9 +20,7 @@ class SubReport(abc.ABC):
         return found_data
 
     @abc.abstractmethod
-    def trigger(self, page_data) -> bool:
-        ...
+    def trigger(self, page_data) -> bool: ...
 
     @abc.abstractmethod
-    def handler(self, page_data) -> BaseModel:
-        ...
+    def handler(self, page_data) -> BaseModel: ...

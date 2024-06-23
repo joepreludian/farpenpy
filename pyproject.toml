@@ -1,7 +1,7 @@
 [project]
 name = "farpenpy"
 version = "0.1.0"
-description = "FarpenPy Parser - Report extractor"
+description = "FarpenPy Parser - Report Extractor"
 authors = [
     {name = "Jonhnatha Trigueiro", email = "jon@preludian.com.br"},
 ]
@@ -11,7 +11,7 @@ dependencies = [
 ]
 requires-python = ">=3.12"
 readme = "README.md"
-license = {text = "Proprietary"}
+license = {text = "GNU Lesser General Public License v2.1"}
 
 [project.optional-dependencies]
 dev = [
@@ -23,6 +23,16 @@ dev = [
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+[tool.coverage.run]
+omit = ["tests/*"]
+
+[tool.flake8]
+ignore = ["E704"]
+per-file-ignores = [
+    "__init__.py:F401",
+]
+max-line-length = 88
+count = true
 
 [tool.pdm]
 distribution = true
