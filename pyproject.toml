@@ -1,0 +1,28 @@
+[project]
+name = "farpenpy"
+version = "0.1.0"
+description = "FarpenPy Parser - Report extractor"
+authors = [
+    {name = "Jonhnatha Trigueiro", email = "jon@preludian.com.br"},
+]
+dependencies = [
+    "pypdf>=4.2.0",
+    "pydantic>=2.7.4",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "Proprietary"}
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.2",
+    "pytest-cov>=5.0.0",
+    "coverage>=7.5.4",
+]
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
