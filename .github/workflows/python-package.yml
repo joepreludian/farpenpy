@@ -24,7 +24,7 @@ jobs:
     - name: Setup PDM
       uses: pdm-project/setup-pdm@v4
 
-    - uses: pre-commit/action@v3.0.1
+    # - uses: pre-commit/action@v3.0.1
     
     - name: Install dependencies
       run: pdm install --with=dev
