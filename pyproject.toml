@@ -1,6 +1,6 @@
 [project]
 name = "farpenpy"
-version = "0.1.0"
+version = "0.1.1"
 description = "FarpenPy Parser - Report Extractor"
 authors = [
     {name = "Jonhnatha Trigueiro", email = "jon@preludian.com.br"},

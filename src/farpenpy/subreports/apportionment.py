@@ -1,10 +1,14 @@
 import re
 from decimal import Decimal
-from typing import List
+from typing import Annotated, List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, PlainSerializer
 
 from farpenpy.subreports import SubReport
+
+DecimalField = Annotated[
+    float, PlainSerializer(lambda x: Decimal(x), return_type=Decimal)
+]
 
 
 class ApportionmentItem(BaseModel):
@@ -12,20 +16,20 @@ class ApportionmentItem(BaseModel):
     cns: str
     nome: str
     comarca: str
-    valor1_proprios: Decimal
-    valor2_comp: Decimal
-    valor3_receb: Decimal
-    valor4_total_atos: Decimal
-    valor5_rateio: Decimal
-    valor6_total_rat: Decimal
-    valor7_outros: Decimal
-    valor8_sub_total: Decimal
-    valor9_compl: Decimal
-    valor10_proj_cid: Decimal
+    valor1_proprios: DecimalField
+    valor2_comp: DecimalField
+    valor3_receb: DecimalField
+    valor4_total_atos: DecimalField
+    valor5_rateio: DecimalField
+    valor6_total_rat: DecimalField
+    valor7_outros: DecimalField
+    valor8_sub_total: DecimalField
+    valor9_compl: DecimalField
+    valor10_proj_cid: DecimalField
     qtds_pc: str
-    valor11_total: Decimal
-    valor12_atos_pagos: Decimal
-    valor13_rend_totais: Decimal
+    valor11_total: DecimalField
+    valor12_atos_pagos: DecimalField
+    valor13_rend_totais: DecimalField
 
 
 class ApportionmentSubReport(SubReport):

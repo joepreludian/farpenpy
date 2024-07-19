@@ -12,3 +12,7 @@ def test_load_farpen_document(caplog):
 
     assert len(available_reports["ApportionmentSubReport"]) > 0
     assert isinstance(available_reports["ApportionmentSubReport"][0], ApportionmentItem)
+
+    assert isinstance(
+        available_reports["ApportionmentSubReport"][0].valor11_total, float
+    )
